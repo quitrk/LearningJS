@@ -8,7 +8,7 @@ var fibonacci = function (n) {
 	var i,
 	    sequence = [0 , 1];
 
-	for(i = 2; i < n; i++){
+	for (i = 2; i < n; i++) {
 		sequence.push(sequence[i-2] + sequence[i-1]);
 	}
 
