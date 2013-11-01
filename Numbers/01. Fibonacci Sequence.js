@@ -14,3 +14,5 @@ var fibonacci = function (n) {
 
 	return sequence;
 };
+
+this.console.log(fibonacci(10));

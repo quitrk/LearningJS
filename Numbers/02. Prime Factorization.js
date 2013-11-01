@@ -29,3 +29,5 @@ var getPrimeFactors = function (n) {
 
 	return sequence;
 };
+
+this.console.log(getPrimeFactors(30030));
