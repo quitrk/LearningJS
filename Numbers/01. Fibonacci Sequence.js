@@ -6,10 +6,10 @@ var fibonacci = function (n) {
     "use strict";
 
     var i,
-        sequence = [0,1];
+        sequence = [0, 1];
 
     for (i = 2; i < n; i++) {
-        sequence.push(sequence[i-2] + sequence[i-1]);
+        sequence.push(sequence[i - 2] + sequence[i - 1]);
     }
 
     return sequence;
