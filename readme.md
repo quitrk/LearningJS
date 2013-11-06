@@ -1,7 +1,7 @@
 LearningJS
------------
+---------
 
-> This repository constitutes a challenge in my road to learning JavaScript and its source of inspiration is [Karan Goel Projects](https://github.com/thekarangoel/Projects) repository where he proposes the completion of over 100 projects in any programming language you want. Not sure at the start of this if JavaScript will make a viable choice for some of them but there's only one way to find out.
+This repository constitutes a challenge in my road to learning JavaScript and its source of inspiration is [Karan Goel Projects](https://github.com/thekarangoel/Projects) repository where he proposes the completion of over 100 projects in any programming language you want. Not sure at the start of this if JavaScript will make a viable choice for some of them but there's only one way to find out.
 
 Numbers
 ---------
@@ -51,7 +51,7 @@ Classic Algorithms
 
 **Closest pair problem** - The closest pair of points problem or closest pair problem is a problem of computational geometry: given *n* points in metric space, find a pair of points with the smallest distance between them.
 
-**Sieve of Eratosthenes** - The sieve of Eratosthenes is one of the most efficient ways to find all of the smaller primes (below 10 million or so).
+[**Sieve of Eratosthenes**](https://github.com/quitrk/LearningJS/blob/master/Classic%20Algorithms/03.%Sieve%20of%20Eratosthenes.js) - The sieve of Eratosthenes is one of the most efficient ways to find all of the smaller primes (below 10 million or so).
 
 
 Graph
@@ -73,7 +73,7 @@ Data Structures
 Text
 ---------
 
-**Reverse a String** - Enter a string and the program will reverse it and print it out.
+[**Reverse a String**](https://github.com/quitrk/LearningJS/blob/master/Text/00.%20Reverse%20a%20String.js) - Enter a string and the program will reverse it and print it out.
 
 **Pig Latin** - Pig Latin is a game of alterations played on the English language game. To create the Pig Latin form of an English word the initial consonant sound is transposed to the end of the word and an ay is affixed (Ex.: "banana" would yield anana-bay). Read Wikipedia for more information on rules.
 
