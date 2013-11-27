@@ -2,17 +2,30 @@
     Numbers 01. Fibonacci Sequence - Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number. 
 */
 
-var fibonacci = function (n) {
+var fibonacci = (function () {
     "use strict";
 
-    var i,
-        sequence = [0, 1];
+    var memo = {};
 
-    for (i = 2; i < n; i++) {
-        sequence.push(sequence[i - 2] + sequence[i - 1]);
+    function f(n) {
+        var value;
+
+        if (memo.hasOwnProperty(n)) {
+            value = memo[n];
+        } else {
+            if (n === 0 || n === 1) {
+                value = n;
+            } else {
+                value = f(n - 1) + f(n - 2);
+            }
+
+            memo[n] = value;
+        }
+
+        return value;
     }
 
-    return sequence;
-};
+    return f;
+}());
 
 this.console.log(fibonacci(10));
