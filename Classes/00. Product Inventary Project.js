@@ -5,66 +5,62 @@
 
 (function () {
     "use strict";
-}());
 
-function Product(id, name, price, quantity) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.quantity = quantity;
-}
-
-Product.prototype = {
-    add : function (count) {
-        this.quantity = !count ? this.quantity++ : this.quantity + count;
-    },
-
-    remove : function (count) {
-        this.quantity = !count ? this.quantity-- : this.quantity - count >= 0 ? this.quantity - count : 0;
-    },
-
-    setPrice : function (value) {
-        this.price = value;
-    },
-
-    toString : function () {
-        return this.name;
+    function Product(id, name, price, quantity) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
     }
-};
 
-function Inventary() {
-    this.items = arguments !== undefined ? Array.prototype.slice.call(arguments) : [];
-}
+    Product.prototype = {
+        add : function (count) {
+            this.quantity += count === 0 || count ? count : 1;
+        },
 
-Inventary.prototype = {
-    add : function (item) {
-        this.items.push(item);
-    },
+        remove : function (count) {
+            this.quantity -= count === 0 || count ? count : 1;
+        },
 
-    remove : function (item) {
-        var index = this.items.indexOf(item);
+        setPrice : function (value) {
+            this.price = value;
+        },
 
-        if (index > -1) {
-            this.items.splice(index, 1);
+        toString : function () {
+            return this.name;
         }
-    },
+    };
 
-    getTotalPrice : function () {
-        var totalPrice = 0;
-
-        return (function (items) {
-            items.map(function (item) {
-                totalPrice += item.price;
-            });
-
-            return totalPrice;
-        }(this.items));
+    function Inventary() {
+        this.items = Array.prototype.slice.call(arguments);
     }
-};
 
-var peaches = new Product(0, "peaches", 5, 5000);
-var carrots = new Product(1, "carrots", 2, 10000);
-var bananas = new Product(2, "bananas", 6, 3000);
+    Inventary.prototype = {
+        add : function (item) {
+            this.items.push(item);
+        },
 
-var inventary = new Inventary(peaches, carrots, bananas);
-inventary.getTotalPrice();
+        remove : function (item) {
+            var index = this.items.indexOf(item);
+
+            if (index > -1) {
+                this.items.splice(index, 1);
+            }
+        },
+
+        getTotalPrice : function () {
+            var sum = this.items.reduce(function (previousValue, currentValue, index, array) {
+                return previousValue + currentValue.price;
+            }, 0);
+
+            return sum;
+        }
+    };
+
+    var peaches = new Product(0, "peaches", 5, 5000),
+        carrots = new Product(1, "carrots", 2, 10000),
+        bananas = new Product(2, "bananas", 6, 3000),
+        inventary = new Inventary(peaches, carrots, bananas);
+
+    inventary.getTotalPrice();
+}());
