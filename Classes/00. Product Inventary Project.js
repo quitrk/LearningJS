@@ -50,7 +50,7 @@
 
         getTotalPrice : function () {
             var sum = this.items.reduce(function (previousValue, currentValue, index, array) {
-                return previousValue + currentValue.price;
+                return previousValue + currentValue.price * currentValue.quantity;
             }, 0);
 
             return sum;
@@ -62,5 +62,5 @@
         bananas = new Product(2, "bananas", 6, 3000),
         inventary = new Inventary(peaches, carrots, bananas);
 
-    inventary.getTotalPrice();
+    return inventary.getTotalPrice();
 }());
