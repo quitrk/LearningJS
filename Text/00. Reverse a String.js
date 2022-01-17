@@ -9,7 +9,7 @@ String.prototype.reverse = function () {
     var i,
         r;
 
-    for (i = this.length - 1, r = ''; i >= 0; r += this[i--]) {}
+    for (i = this.length - 1, r = ''; i >= 0; r += this[i--]);
     return r;
 };
 
